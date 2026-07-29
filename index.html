@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSDynamic365 — Microsoft Dynamics 365 Implementation Partner</title>
+<meta name="description" content="Modern Microsoft Dynamics 365 implementation. Business Central, Sales, Customer Service, Finance & Operations. Live in weeks, not quarters.">
+<meta name="theme-color" content="#0078D4">
+<meta property="og:title" content="MSDynamic365 — Microsoft Dynamics 365 Implementation Partner">
+<meta property="og:description" content="Modern Microsoft Dynamics 365 implementation. Live in weeks, not quarters.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://msdynamic365.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='14' height='14' fill='%230078D4'/%3E%3Crect x='16' width='14' height='14' fill='%235B5FC7'/%3E%3Crect y='16' width='14' height='14' fill='%235B5FC7'/%3E%3Crect x='16' y='16' width='14' height='14' fill='%230078D4'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        msblue:   { 500: '#0078D4', 600: '#106EBE', 700: '#005A9E', 800: '#004578' },
+        msindigo: { 400: '#7B7FE0', 500: '#5B5FC7', 600: '#4F4FB8' },
+        navy:     { 900: '#0F1A2F', 800: '#1A2942', 700: '#2C3E60', 600: '#475878' }
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .font-display { font-family: 'Manrope', system-ui, sans-serif; letter-spacing: -0.02em; }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0,120,212,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,120,212,.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+  }
+  .grad-text {
+    background: linear-gradient(120deg, #0078D4 0%, #5B5FC7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .grad-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  *:focus-visible {
+    outline: 3px solid #5B5FC7;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(20px); animation: rise .7s ease-out forwards; }
+    .reveal-2 { animation-delay: .1s; }
+    .reveal-3 { animation-delay: .2s; }
+    .reveal-4 { animation-delay: .3s; }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 bg-msblue-500 text-white px-4 py-2 rounded-md z-50 text-sm font-medium">Skip to content</a>
+
+<header class="sticky top-0 z-30 border-b border-slate-100 bg-white/85 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3" aria-label="MSDynamic365 home">
+      <span class="grid grid-cols-2 gap-0.5 w-8 h-8" aria-hidden="true">
+        <span class="bg-msblue-500"></span>
+        <span class="bg-msindigo-500"></span>
+        <span class="bg-msindigo-500"></span>
+        <span class="bg-msblue-500"></span>
+      </span>
+      <span class="font-display font-bold text-lg">msdynamic<span class="text-msblue-500">365</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-navy-700" aria-label="Primary">
+      <a href="#services" class="hover:text-msblue-600 transition-colors">Services</a>
+      <a href="#outcomes" class="hover:text-msblue-600 transition-colors">Outcomes</a>
+      <a href="#approach" class="hover:text-msblue-600 transition-colors">Approach</a>
+      <a href="#contact" class="inline-flex items-center gap-1.5 bg-navy-900 text-white px-4 py-2 rounded-lg hover:bg-msblue-600 transition-colors min-h-[44px]">
+        Book a call
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+    <a href="#contact" class="md:hidden inline-flex items-center bg-navy-900 text-white px-4 py-2 rounded-lg text-sm font-medium min-h-[44px]">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden grid-bg">
+    <span class="grad-blob bg-msblue-500 w-[420px] h-[420px] top-[-100px] left-[-100px]" aria-hidden="true"></span>
+    <span class="grad-blob bg-msindigo-500 w-[380px] h-[380px] top-[100px] right-[-80px]" aria-hidden="true"></span>
+    <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-24 md:pt-32 md:pb-32">
+      <div class="max-w-4xl reveal">
+        <div class="inline-flex items-center gap-2 bg-msblue-500/10 text-msblue-700 px-3 py-1.5 rounded-full text-xs font-semibold mb-7">
+          <span class="w-1.5 h-1.5 bg-msblue-500 rounded-full" aria-hidden="true"></span>
+          Microsoft Solutions Partner · Business Applications
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.02] tracking-tight mb-7">
+          Dynamics 365<br>implementation, <span class="grad-text">the short way.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-navy-600 leading-relaxed mb-10 max-w-2xl">
+          Business Central, Sales, Customer Service, Finance &amp; Operations &mdash;
+          scoped, configured, and live in weeks instead of quarters. Senior consultants
+          only. No offshore handoff. No surprise change orders.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 reveal reveal-2">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-msblue-500 hover:bg-msblue-600 text-white px-7 py-4 rounded-xl text-base font-semibold transition-colors min-h-[52px]">
+            Book a 20-min scoping call
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-navy-900 border border-slate-200 px-7 py-4 rounded-xl text-base font-semibold transition-colors min-h-[52px]">
+            See what we deliver
+          </a>
+        </div>
+        <div class="mt-12 grid grid-cols-3 gap-6 max-w-2xl reveal reveal-3">
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-msblue-600">8&nbsp;wks</div>
+            <div class="text-sm text-navy-600 mt-1">Avg. time to first go-live</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-msblue-600">100%</div>
+            <div class="text-sm text-navy-600 mt-1">Senior consultants on every project</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-msblue-600">Fixed</div>
+            <div class="text-sm text-navy-600 mt-1">Scope &amp; fee, agreed up front</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS / TRUST STRIP -->
+  <section aria-label="Microsoft stack" class="border-y border-slate-100 bg-slate-50/60">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-6">
+      <span class="text-xs uppercase tracking-widest text-navy-600 font-semibold">Built on the Microsoft stack</span>
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-navy-700 text-sm font-semibold">
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-msblue-500" aria-hidden="true"></span>Dynamics 365</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-msindigo-500" aria-hidden="true"></span>Power Platform</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-msblue-500" aria-hidden="true"></span>Azure</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-msindigo-500" aria-hidden="true"></span>Microsoft 365</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-msblue-500" aria-hidden="true"></span>Copilot Studio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-16">
+        <div class="text-xs uppercase tracking-widest text-msblue-600 font-bold mb-4">What we deliver</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-5">
+          Four practices.<br>One accountable team.
+        </h2>
+        <p class="text-lg text-navy-600">
+          Pick the module that hurts most. We&rsquo;ll wire the rest later, without re-architecting.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="group relative rounded-2xl border border-slate-200 hover:border-msblue-500 hover:shadow-lg hover:shadow-msblue-500/10 transition-all p-7 bg-white">
+          <div class="w-12 h-12 rounded-xl bg-msblue-500/10 text-msblue-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2">Business Central</h3>
+          <p class="text-sm text-navy-600 leading-relaxed mb-4">Finance, inventory, supply chain &mdash; the SMB ERP backbone, configured to your ops.</p>
+          <ul class="text-sm text-navy-700 space-y-1.5">
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>QuickBooks &amp; NetSuite migration</li>
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>Multi-entity consolidation</li>
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>Warehouse &amp; manufacturing</li>
+          </ul>
+        </article>
+        <article class="group relative rounded-2xl border border-slate-200 hover:border-msblue-500 hover:shadow-lg hover:shadow-msblue-500/10 transition-all p-7 bg-white">
+          <div class="w-12 h-12 rounded-xl bg-msindigo-500/10 text-msindigo-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2">Sales</h3>
+          <p class="text-sm text-navy-600 leading-relaxed mb-4">Pipeline, forecasting, and seller productivity with Sales Copilot wired in.</p>
+          <ul class="text-sm text-navy-700 space-y-1.5">
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>Salesforce migration</li>
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>LinkedIn Sales Navigator</li>
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>Forecast hygiene playbook</li>
+          </ul>
+        </article>
+        <article class="group relative rounded-2xl border border-slate-200 hover:border-msblue-500 hover:shadow-lg hover:shadow-msblue-500/10 transition-all p-7 bg-white">
+          <div class="w-12 h-12 rounded-xl bg-msblue-500/10 text-msblue-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2">Customer Service</h3>
+          <p class="text-sm text-navy-600 leading-relaxed mb-4">Omnichannel, case routing, knowledge, and AI-assisted agent handle.</p>
+          <ul class="text-sm text-navy-700 space-y-1.5">
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>Zendesk / ServiceNow migration</li>
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>Copilot Studio agents</li>
+            <li class="flex items-start gap-2"><span class="text-msblue-500 mt-1" aria-hidden="true">&bull;</span>Voice channel &amp; queues</li>
+          </ul>
+        </article>
+        <article class="group relative rounded-2xl border border-slate-200 hover:border-msblue-500 hover:shadow-lg hover:shadow-msblue-500/10 transition-all p-7 bg-white">
+          <div class="w-12 h-12 rounded-xl bg-msindigo-500/10 text-msindigo-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3h18v6H3z"/><path d="M3 15h18v6H3z"/><path d="M3 9v6"/><path d="M21 9v6"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2">Finance &amp; Operations</h3>
+          <p class="text-sm text-navy-600 leading-relaxed mb-4">Enterprise ERP for complex finance, supply chain, and global operations.</p>
+          <ul class="text-sm text-navy-700 space-y-1.5">
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>SAP / Oracle migration</li>
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>Multi-country &amp; multi-currency</li>
+            <li class="flex items-start gap-2"><span class="text-msindigo-500 mt-1" aria-hidden="true">&bull;</span>Audit-ready close in days</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="py-24 md:py-32 bg-navy-900 text-white relative overflow-hidden">
+    <span class="grad-blob bg-msblue-500 w-[500px] h-[500px] top-[-200px] right-[-100px]" aria-hidden="true"></span>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-16">
+        <div class="text-xs uppercase tracking-widest text-msindigo-400 font-bold mb-4">Outcomes that matter</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-5">
+          The point isn&rsquo;t the software. It&rsquo;s what changes after.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8">
+          <div class="font-display text-5xl font-bold grad-text mb-2">9&nbsp;days</div>
+          <div class="text-base font-semibold mb-2">Monthly close, down from 23</div>
+          <p class="text-sm text-white/70">Mid-market distributor, BC + Power BI close acceleration.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8">
+          <div class="font-display text-5xl font-bold grad-text mb-2">42%</div>
+          <div class="text-base font-semibold mb-2">Fewer customer-service tickets reopened</div>
+          <p class="text-sm text-white/70">SaaS scale-up, D365 Customer Service + Copilot agents.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8">
+          <div class="font-display text-5xl font-bold grad-text mb-2">$1.4M</div>
+          <div class="text-base font-semibold mb-2">Inventory write-down avoided</div>
+          <p class="text-sm text-white/70">Manufacturer, F&amp;O + warehouse module rollout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="py-24 md:py-32 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-16">
+        <div class="text-xs uppercase tracking-widest text-msblue-600 font-bold mb-4">How we work</div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-5">
+          Three weeks to a written plan you can hold us to.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="font-display text-sm font-bold text-msblue-600 mb-3">01 &mdash; SCOPING</div>
+          <h3 class="font-display text-xl font-bold mb-2">Week 1</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">Discovery sessions with the people who actually use the system today. We map gaps to D365 capability, not the other way around.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="font-display text-sm font-bold text-msindigo-500 mb-3">02 &mdash; PLAN</div>
+          <h3 class="font-display text-xl font-bold mb-2">Week 2&ndash;3</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">Fixed-scope, fixed-fee implementation plan. Every customization, every integration, every training session priced before you commit.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="font-display text-sm font-bold text-msblue-600 mb-3">03 &mdash; BUILD</div>
+          <h3 class="font-display text-xl font-bold mb-2">From week 4</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">Two-week sprints with working software at the end of each. You sign off on what ships. We don&rsquo;t bill for rework.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-24 md:py-32 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-msblue-700 via-msblue-500 to-msindigo-500 text-white p-10 md:p-16">
+        <span class="grad-blob bg-white w-[300px] h-[300px] top-[-100px] right-[-50px] opacity-20" aria-hidden="true"></span>
+        <div class="relative max-w-2xl">
+          <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-5">
+            Book a 20-minute scoping call.
+          </h2>
+          <p class="text-lg text-white/85 mb-8">
+            Tell us the system you&rsquo;re on, the module you&rsquo;re considering, and the
+            deadline. We&rsquo;ll come back with a yes / no / not yet &mdash; and a written
+            scope if it&rsquo;s a yes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/cdn-cgi/l/email-protection#2149444d4d4e614c5245584f404c48421217140f424e4c1e5254434b4442551c6512171404131152424e51484f4604131142404d4d" class="inline-flex items-center justify-center gap-2 bg-white text-msblue-700 hover:bg-slate-100 px-7 py-4 rounded-xl text-base font-semibold transition-colors min-h-[52px]">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l8 7 8-7"/></svg>
+              <span class="__cf_email__" data-cfemail="0d65686161624d607e6974636c60646e3e3b38236e6260">[email&#160;protected]</span>
+            </a>
+            <a href="tel:+18001234567" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-7 py-4 rounded-xl text-base font-semibold transition-colors min-h-[52px]">
+              Or call us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-slate-100 bg-white py-12">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="grid grid-cols-2 gap-0.5 w-7 h-7" aria-hidden="true">
+        <span class="bg-msblue-500"></span>
+        <span class="bg-msindigo-500"></span>
+        <span class="bg-msindigo-500"></span>
+        <span class="bg-msblue-500"></span>
+      </span>
+      <span class="font-display font-bold">msdynamic<span class="text-msblue-500">365</span></span>
+      <span class="text-sm text-navy-600 ml-2">&copy; 2026 &mdash; Microsoft Dynamics 365 implementation partner</span>
+    </div>
+    <div class="flex items-center gap-6 text-sm text-navy-600">
+      <a href="/cdn-cgi/l/email-protection#a7cfc2cbcbc8e7cad4c3dec9c6cacec494919289c4c8ca" class="hover:text-msblue-600 transition-colors"><span class="__cf_email__" data-cfemail="650d0009090a250816011c0b04080c065653504b060a08">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
