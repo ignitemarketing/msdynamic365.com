@@ -12,26 +12,10 @@
 <meta property="og:url" content="https://msdynamic365.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"></noscript>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='14' height='14' fill='%230078D4'/%3E%3Crect x='16' width='14' height='14' fill='%235B5FC7'/%3E%3Crect y='16' width='14' height='14' fill='%235B5FC7'/%3E%3Crect x='16' y='16' width='14' height='14' fill='%230078D4'/%3E%3C/svg%3E">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        display: ['Manrope', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif']
-      },
-      colors: {
-        msblue:   { 500: '#0078D4', 600: '#106EBE', 700: '#005A9E', 800: '#004578' },
-        msindigo: { 400: '#7B7FE0', 500: '#5B5FC7', 600: '#4F4FB8' },
-        navy:     { 900: '#0F1A2F', 800: '#1A2942', 700: '#2C3E60', 600: '#475878' }
-      }
-    }
-  }
-}
-</script>
 <style>
   body { font-family: 'Inter', system-ui, sans-serif; }
   .font-display { font-family: 'Manrope', system-ui, sans-serif; letter-spacing: -0.02em; }
@@ -69,6 +53,7 @@ tailwind.config = {
     @keyframes rise { to { opacity: 1; transform: translateY(0); } }
   }
 </style>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body class="bg-white text-navy-900 antialiased">
 
