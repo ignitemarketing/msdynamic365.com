@@ -1,0 +1,14 @@
+# Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
+#
+# The CSP ships as Report-Only first; switch it to Content-Security-Policy once
+# the live page shows no violations. Drop https://cdn.tailwindcss.com and
+# 'unsafe-inline' from script-src once the Tailwind Play CDN is gone (#2).
+# frame-ancestors is ignored in Report-Only, so X-Frame-Options enforces
+# framing protection meanwhile.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
