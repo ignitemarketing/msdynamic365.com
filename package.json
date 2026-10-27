@@ -1,0 +1,8 @@
+{
+  "name": "msdynamic365.com",
+  "private": true,
+  "description": "Static site for msdynamic365.com. style.css is generated and committed so the deploy needs no build step.",
+  "scripts": {
+    "build:css": "npx --yes tailwindcss@3.4.17 -c tailwind.config.js -i src/input.css -o style.css --minify"
+  }
+}
