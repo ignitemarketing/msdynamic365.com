@@ -1,0 +1,65 @@
+# Deploys main to the Cloudflare Pages project serving msdynamic365.com.
+#
+# Inactive until the repo has variable CLOUDFLARE_PAGES_PROJECT and secrets
+# CLOUDFLARE_API_TOKEN (Pages: Edit) and CLOUDFLARE_ACCOUNT_ID; until then the
+# job shows as skipped. Run it by hand with branch=preview first to diff the
+# preview URL against the live site before the first production deploy.
+
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Pages branch to deploy (main = production)
+        required: true
+        default: preview
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: deploy
+    if: ${{ vars.CLOUDFLARE_PAGES_PROJECT != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+
+      # Publish only the public files, not CI or build config.
+      - name: Collect site files
+        run: |
+          mkdir dist
+          for f in *.html *.css *.txt *.xml _headers _redirects; do
+            if [ -f "$f" ]; then cp "$f" dist/; fi
+          done
+          if [ -d fonts ]; then cp -R fonts dist/; fi
+          ls -la dist
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+          BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || 'main' }}
+        run: >-
+          npx --yes wrangler@4.153.0 pages deploy dist
+          --project-name "$PROJECT"
+          --branch "$BRANCH"
+          --commit-hash "$GITHUB_SHA"
+          --commit-dirty=true
