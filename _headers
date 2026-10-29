@@ -16,3 +16,6 @@
 # Keep the pages.dev host (and its preview subdomains) out of search results.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
